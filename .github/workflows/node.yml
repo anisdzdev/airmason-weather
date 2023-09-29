@@ -25,7 +25,7 @@ jobs:
       - name: Create test build
         run: npm run build --if-present
       - name: Execute test cases
-        run: npm run test:ci
+        run: npm run test --if-present
 
 
   frontend-deploy:

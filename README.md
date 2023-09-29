@@ -7,6 +7,8 @@ Wanna know the weather now? in 4 hours? tomorrow? We got you!
 
 This project uses yarn, make sure you have it installed. In the project directory, you can run:
 
+Before you start make sure to create a `.env` file in the root directory by copying the `.env.example` file and replacing the `REACT_APP_API_KEY` with your own API key from [OpenWeather](https://openweathermap.org/api).
+
 ### `yarn start`
 
 Runs the app in the development mode.\
