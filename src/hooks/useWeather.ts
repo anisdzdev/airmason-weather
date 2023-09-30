@@ -8,6 +8,12 @@ export const useWeather = (searchCity: string|undefined, isMetric: boolean) : [a
     const [loading, setLoading] = useState(false);
 
     const searchByLocation = async () => {
+        if (!process.env.REACT_APP_API_KEY || !process.env.REACT_APP_API_URL) {
+            setLoading(false)
+            setError({ error: 'API key or API URL not found' })
+            toast.dismiss()
+            return toast.error('API key or API URL not found')
+        }
         if (searchCity) {
             setLoading(true);
             const search = searchCity.charAt(0).toUpperCase() + searchCity.slice(1);
@@ -18,19 +24,18 @@ export const useWeather = (searchCity: string|undefined, isMetric: boolean) : [a
                     setError(false);
                     setLoading(false);
                 } else {
-                    toast.clearWaitingQueue()
+                    toast.dismiss()
                     toast.error("Unable to find city")
                     setError({ error: 'City not found' });
                     setLoading(false);
                 }
             } catch (error : any) {
-                toast.clearWaitingQueue()
                 console.log(error);
                 setError({ error: "Error loading weather data about this city" });
                 setLoading(false);
             }
         } else {
-            toast.clearWaitingQueue()
+            toast.dismiss()
             toast.error("Unable to find city")
             setError({ error: "Error loading weather data about this city" })
             setLoading(false);

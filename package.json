@@ -41,6 +41,7 @@
   },
   "devDependencies": {
     "@babel/preset-env": "^7.22.20",
+    "@testing-library/react-hooks": "^8.0.1",
     "@types/country-data": "^0.0.2",
     "autoprefixer": "^10.4.16",
     "jest-environment-jsdom": "^29.7.0",

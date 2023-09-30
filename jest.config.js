@@ -7,6 +7,7 @@ module.exports = {
     testEnvironment: 'jsdom',
     testRegex: '/__tests__/.*\\.(test|spec)\\.(ts|tsx|js)$',
     setupFilesAfterEnv: [
-        "<rootDir>/src/__tests__/setupTests.ts"
+        "<rootDir>/src/__tests__/setupTests.ts",
+        "<rootDir>/src/__tests__/__mocks__/browserMock.ts"
     ]
 };

@@ -1,11 +1,15 @@
 import {useState} from "react";
 import {useNavigate} from "react-router-dom";
+import {toast} from "react-toastify";
 
 export const Search = ({className} : {className?: string|undefined}) => {
     const [searchTerm, setSearchTerm] = useState('');
     const navigate = useNavigate()
 
     const handleSearch = () => {
+        if (!process.env.REACT_APP_API_KEY || !process.env.REACT_APP_API_URL) {
+            return toast.error('API key or API URL not found')
+        }
         navigate(`/city/${searchTerm}`)
     }
 
