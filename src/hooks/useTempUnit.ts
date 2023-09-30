@@ -1,18 +1,18 @@
 import {useState, useEffect, ChangeEventHandler} from 'react';
 
-export const useIsCelsius = () : [boolean, ChangeEventHandler<HTMLInputElement>] => {
-    const [isCelsius, setIsCelsius] = useState<boolean>(true)
+export const useIsMetric = () : [boolean, ChangeEventHandler<HTMLInputElement>] => {
+    const [isMetric, setIsMetric] = useState<boolean>(true)
 
     const unitModeFlip = () => {
-        setIsCelsius(!isCelsius);
-        localStorage.setItem('isCelsius', (!isCelsius).toString());
+        setIsMetric(!isMetric);
+        localStorage.setItem('isMetric', (!isMetric).toString());
     }
 
     useEffect(() => {
-        const storedIsCelsius = localStorage.getItem('isCelsius');
-        setIsCelsius(storedIsCelsius === 'true');
+        const storedIsMetric = localStorage.getItem('isMetric');
+        setIsMetric(storedIsMetric === 'true');
     }, []);
 
-    return [isCelsius, unitModeFlip];
+    return [isMetric, unitModeFlip];
 
 }

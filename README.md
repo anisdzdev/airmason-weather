@@ -20,8 +20,8 @@ You will also see any lint errors in the console.
 ### `yarn test`
 
 Wanna check if the tests are passing? Run this command and see for yourself!\
+**Disclaimer**: The written tests are as basic as it gets, they almost don't test anything.\
 Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
 
 ## Sole Developer

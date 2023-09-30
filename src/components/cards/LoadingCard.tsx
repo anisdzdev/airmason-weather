@@ -1,5 +1,5 @@
 export const LoadingCard = () => {
-    return <div className="flex flex-col w-[75%] m-5 rounded-[20px] shadow-card bg-white dark:bg-gray-800 p-5">
+    return <div className="flex flex-col w-[75%] m-5 rounded-[20px] shadow-card bg-white p-5">
         <div className="animate-pulse flex space-x-4">
             <div className="rounded-full bg-slate-200 h-10 w-10"></div>
             <div className="flex-1 space-y-6 py-1">
