@@ -11,7 +11,7 @@ function City() {
     const [isMetric, setIsMetric] = useIsMetric();
     const [weather] = useWeather(city, isMetric);
 
-    const isFavorite = city && new RegExp(favorites.join("|"), "i").test(city);
+    const isFavorite = city && favorites.length > 0 && new RegExp(favorites.join("|"), "i").test(city);
 
     return (
         <div>

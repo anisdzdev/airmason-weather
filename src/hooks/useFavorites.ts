@@ -35,6 +35,8 @@ export const useFavorites = () : [string[], (city: string, immediate?: boolean) 
         const storedFavorites = localStorage.getItem('favorites');
         if (storedFavorites) {
             setFavorites(JSON.parse(storedFavorites));
+        } else {
+            localStorage.setItem('favorites', JSON.stringify([]));
         }
     }, []);
 
