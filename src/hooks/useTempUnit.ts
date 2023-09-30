@@ -4,7 +4,6 @@ export const useIsMetric = () : [boolean, ChangeEventHandler<HTMLInputElement>|a
     const [isMetric, setIsMetric] = useState<boolean>(true)
 
     const unitModeFlip = () => {
-        console.log(!isMetric)
         setIsMetric(!isMetric);
         localStorage.setItem('isMetric', (!isMetric).toString());
     }
@@ -13,10 +12,6 @@ export const useIsMetric = () : [boolean, ChangeEventHandler<HTMLInputElement>|a
         const storedIsMetric = localStorage.getItem('isMetric');
         setIsMetric(storedIsMetric === null || storedIsMetric === 'true');
     }, []);
-
-    useEffect(() => {
-        console.log(isMetric)
-    }, [isMetric]);
 
     return [isMetric, unitModeFlip];
 

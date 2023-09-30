@@ -10,7 +10,7 @@ describe('useFavorites', () => {
         const {result} = renderHook(() => useFavorites())
 
         act(() => {
-            result.current[1]('test')
+            result.current[1]('test', true)
         })
 
         expect(result.current[0]).toEqual(['test'])
@@ -20,10 +20,10 @@ describe('useFavorites', () => {
         const {result} = renderHook(() => useFavorites())
 
         act(() => {
-            result.current[1]('test')
+            result.current[1]('test', true)
         })
         act(() => {
-            result.current[1]('test')
+            result.current[1]('test', true)
         })
 
         expect(result.current[0]).toEqual([])
